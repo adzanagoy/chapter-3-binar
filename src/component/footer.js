@@ -12,23 +12,23 @@ const Footer = (props) => {
     <div>
       <Container
         id="Footer"
-        className="container pt-lg-3 pt-0 mb-lg-5 mb-1 mt-5"
+        className="container pt-lg-3 pt-0 mt-4 mb-lg-5 mb-1 "
       >
         <Row className="footer row">
           <Col className="col-12 col-lg-4">
             <Nav className="nav d-block">
               <Nav.Item className="nav-item">
-                <Nav.Link className="footer-link nav-link fw-bold" href="">
+                <Nav.Link className="footer-link nav-link fw-bold mb-3" href="">
                   Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="nav-item">
-                <Nav.Link className="footer-link nav-link fw-bold" href="">
+                <Nav.Link className="footer-link nav-link fw-bold my-3" href="">
                   binarcarrental@gmail.com
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="nav-item">
-                <Nav.Link className="footer-link nav-link fw-bold" href="">
+                <Nav.Link className="footer-link nav-link fw-bold my-3" href="">
                   081-233-334-808
                 </Nav.Link>
               </Nav.Item>
@@ -37,22 +37,25 @@ const Footer = (props) => {
           <Col className="col-12 col-lg-2">
             <Nav className="nav d-block">
               <Nav.Item className="nav-item">
-                <Nav.Link className="footer-link nav-link" to="#Our-Services">
+                <Nav.Link
+                  className="footer-link nav-link mb-2"
+                  to="#Our-Services"
+                >
                   Our services
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="nav-item">
-                <Nav.Link className="footer-link nav-link" to="#Why-Us">
+                <Nav.Link className="footer-link nav-link my-2" to="#Why-Us">
                   Why Us
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="nav-item">
-                <Nav.Link className="footer-link nav-link" to="#Testinomy">
+                <Nav.Link className="footer-link nav-link my-2" to="#Testinomy">
                   Testimonial
                 </Nav.Link>
               </Nav.Item>
               <Nav.Item className="nav-item">
-                <Nav.Link className="footer-link nav-link" to="#Faq">
+                <Nav.Link className="footer-link nav-link my-2" to="#Faq">
                   FAQ
                 </Nav.Link>
               </Nav.Item>

@@ -50,14 +50,11 @@ a {
 
 a.nav-link {
   color: black;
+  margin: 0 8px;
 }
 
-.nav {
-  margin-right: 100px;
-}
-
-.me-nav {
-  margin-right: 70px;
+.nav-item {
+  margin-right: 150px;
 }
 
 .navbar-toggler {
@@ -308,6 +305,10 @@ a,
   }
 
   /* Header Nav */
+  .nav-item {
+    margin-right: 0;
+  }
+
   /* Hero Section */
   .img-car {
     display: inline-flex;
@@ -333,7 +334,8 @@ a,
 
   .image-services {
     margin: 0 0px 20px 0;
-    width: 400px;
+    padding: 0 30px 0 0;
+    width: 300px;
   }
 
   .text-services {
@@ -432,11 +434,10 @@ a,
 }
 
 .pencarian {
-  position: absolute;
-  position: absolute;
+  position: relative;
   left: 0;
   right: 0;
-  margin: 80px auto;
+  margin: -40px auto 90px;
   width: 1047px;
   height: 108px;
   background-color: white;
@@ -448,13 +449,13 @@ td {
 
 .form-select {
   padding: 8px;
-  width: 230px;
+  width: 200px;
   font-size: 12px;
 }
 
 .form-select.cari-mobil {
   padding: 8px;
-  width: 212px;
+  width: 208px;
   font-size: 12px;
 }
 
@@ -481,10 +482,16 @@ option {
   position: relative;
   left: 0;
   right: 0;
-  margin: 125px auto 20px;
+  margin: -50px auto 20px;
   width: 1047px;
   height: 142px;
   background-color: white;
+}
+
+.form-control {
+  padding: 8px;
+  width: 220px;
+  font-size: 12px;
 }
 
 .text-pencarian-mobil {
@@ -501,6 +508,7 @@ option {
 
 .mobil-card {
   width: 333px;
+  height: 478px;
 }
 
 .card-img-top {

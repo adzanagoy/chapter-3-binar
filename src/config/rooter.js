@@ -1,6 +1,7 @@
 import { useRoutes } from "react-router-dom";
 import Home from "page/home";
-import RentCar from "page/rent";
+import RentCar from "page/rent-resources/rent";
+import DetailRentCar from "page/detail_rent";
 
 const routerSource = (props) => [
   { index: true, path: "/", element: <Home {...props} title="Home" /> },
@@ -8,6 +9,11 @@ const routerSource = (props) => [
     index: true,
     path: "/start-rent-car",
     element: <RentCar {...props} title="Rent Car" />,
+  },
+  {
+    index: true,
+    path: "/Detail-rent-car",
+    element: <DetailRentCar {...props} title="Detail Rent Car" />,
   },
   { index: true, path: "/*", element: <>ERROR</> },
 ];

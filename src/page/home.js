@@ -1,5 +1,5 @@
 import { Container, Row, Col, Button, Accordion } from "react-bootstrap";
-
+import { useNavigate } from "react-router-dom";
 import img_service from "assets/images/img_service.svg";
 import check_ourSevices from "assets/images/check-ourServices.png";
 import icon_complete from "assets/images/icon_complete.png";
@@ -12,6 +12,10 @@ import vector_left from "assets/images/Vector-left.png";
 import vector_right from "assets/images/Vector-right.png";
 
 const Home = (props) => {
+  const navigate = useNavigate();
+  const clickHandler = (e) => {
+    navigate("/start-rent-car");
+  };
   return (
     <div>
       {/* <!-- Our Services --> */}
@@ -157,6 +161,7 @@ const Home = (props) => {
             <p className="testi-align mt-1">John Dee 32, Bromo</p>
           </Col>
         </Row>
+
         <Row className="btn-slider row justify-content-center mt-3">
           <Button
             className="col-1 me-2 rounded-circle p-0 "
@@ -183,7 +188,7 @@ const Home = (props) => {
           </p>
         </div>
         <Button
-          href="cariMobil.html"
+          onClick={clickHandler}
           className="btn-banner btn btn-success btn-sm"
         >
           Mulai Sewa Mobil
