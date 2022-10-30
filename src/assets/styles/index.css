@@ -42,6 +42,15 @@ p {
   background-color: #f1f3ff;
 }
 
+.opacity {
+  height: 10px;
+  background: #282727bf;
+  position: absolute;
+  top: 0;
+  padding: 100%;
+  width: 100%;
+}
+
 /* Navbar */
 .navbar,
 a {

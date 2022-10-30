@@ -1,5 +1,5 @@
 import { Form, Button, Container } from "react-bootstrap";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { fetcApi } from "config/fethApi";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { category, price, status } from "./option-data";
@@ -26,10 +26,13 @@ const RentCar = (props) => {
     });
   };
 
+  const [buttonText, setButtonText] = useState("Cari Mobil");
+
   const clickHandler = () => {
     props.closeHandler("success");
     setfocus(false);
-    fetcApi(state).then(({ data }) => console.log(data.cars));
+    fetcApi(state).then(({ data }) => setdata(data.cars));
+    setButtonText("Edit");
   };
 
   useEffect(() => {
@@ -37,12 +40,28 @@ const RentCar = (props) => {
       fetcApi(state).then(({ data }) => setdata(data.cars));
     setLoading("break");
   }, [state, isLoading]);
+
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, false);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, false);
+    };
+  }, []);
+
+  const handleClickOutside = (event) => {
+    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+      setfocus(false);
+    }
+  };
+
   return (
     <>
       {focus && <div className="opacity"></div>}
       {/* <!-- Pencarian --> */}
       <div className="pencarian hasil-pencarian shadow-sm p-4 rounded-3">
-        <Form onFocus={() => setfocus(true)}>
+        <Form ref={wrapperRef} onFocus={() => setfocus(true)}>
           <table>
             <tr>
               <td>
@@ -133,7 +152,7 @@ const RentCar = (props) => {
                   className="btn btn-success btn-sm"
                   onClick={clickHandler}
                 >
-                  Cari Mobil
+                  {buttonText}
                 </Button>
               </td>
             </tr>
@@ -141,7 +160,11 @@ const RentCar = (props) => {
         </Form>
       </div>
       <Container className="hasil-mobil">
-        <CarCard data={data} />
+        {data.length === 0 ? (
+          <div className="text-center pb-5">Data Not found</div>
+        ) : (
+          <CarCard data={data} />
+        )}
       </Container>
     </>
   );
